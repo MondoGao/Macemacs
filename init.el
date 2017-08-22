@@ -333,7 +333,13 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code "
-  
+
+  ;; keys
+  (global-set-key (kbd "C-M-g") 'evil-goto-definition)
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "s->") 'mc/mark-next-like-this-symbol)
+  (global-set-key (kbd "s-<") 'mc/mark-previous-like-this-symbol)
 
   (setq
    ;; spacemacs
@@ -351,7 +357,6 @@ you should place your code "
    web-mode-css-indent-offset 2
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
-  (global-set-key (kbd "C-M-g") 'evil-goto-definition)
 
   ;; modes
   (display-time-mode)
