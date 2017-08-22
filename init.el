@@ -2,7 +2,8 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
-(add-to-load-path "./functions")
+(add-to-list 'load-path "~/.spacemacs.d/defuns/")
+(load "helpers.el")
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
@@ -21,7 +22,8 @@ values."
    ;; listed in `dotspacemacs-configuration-layers'. `nil' disable the lazy
    ;; installation feature and you have to explicitly list a layer in the
    ;; variable `dotspacemacs-configuration-layers' to install it.
-   ;; (default 'unused)
+  
+ ;; (default 'unused)
    dotspacemacs-enable-lazy-installation 'unused
    ;; If non-nil then Spacemacs will ask for confirmation before installing
    ;; a layer lazily. (default t)
@@ -81,7 +83,7 @@ values."
    ;; unused packages as well as their unused dependencies.
    ;; `used-but-keep-unused' installs only the used packages but won't uninstall
    ;; them if they become unused. `all' installs *all* packages supported by
-   ;; Spacemacs and never uninstall them. (default is `used-only')
+   ;; Spacemacs and never uninstall them. (dsefault is `used-only')
    dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
@@ -331,7 +333,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code "
-  (add-hook 'flycheck-mode-hook #'helpers/use-eslint-from-node-modules)
+  
 
   (setq
    ;; spacemacs
@@ -362,6 +364,9 @@ you should place your code "
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+
+  ;; hooks
+  (add-hook 'flycheck-mode-hook #'helpers/use-eslint-from-node-modules)
   (add-hook 'web-mode-hook 'helpers/web-mode-indent-setup)
   )
 
