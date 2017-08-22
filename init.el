@@ -338,6 +338,9 @@ you should place your code "
    powerline-default-separator 'arrow
    make-backup-files nil
 
+   ;; git
+   magit-repository-directories '("~/Workspace/")
+
    ;; indent
    js2-basic-offset 2
    js-indent-level 2
