@@ -334,8 +334,11 @@ you should place your code "
   (add-hook 'flycheck-mode-hook #'helpers/use-eslint-from-node-modules)
 
   (setq
+   ;; spacemacs
    powerline-default-separator 'arrow
    make-backup-files nil
+
+   ;; indent
    js2-basic-offset 2
    js-indent-level 2
    css-indent-offset 2
@@ -345,10 +348,10 @@ you should place your code "
    web-mode-attr-indent-offset 2)
   (global-set-key (kbd "C-M-g") 'evil-goto-definition)
 
+  ;; modes
   (display-time-mode)
   (global-git-commit-mode t)
   (global-company-mode)
-
 
   (add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
   (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
@@ -356,12 +359,7 @@ you should place your code "
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
-  (defun my-web-mode-indent-setup ()
-    (setq web-mode-markup-indent-offset 2) ; web-mode, html tag in html file
-    (setq web-mode-css-indent-offset 2)    ; web-mode, css in html file
-    (setq web-mode-code-indent-offset 2)   ; web-mode, js code in html file
-    )
-  (add-hook 'web-mode-hook 'my-web-mode-indent-setup)
+  (add-hook 'web-mode-hook 'helpers/web-mode-indent-setup)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
