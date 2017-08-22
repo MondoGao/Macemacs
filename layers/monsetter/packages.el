@@ -32,6 +32,7 @@
 (defconst monsetter-packages
   '(
     youdao-dictionary
+    thrift
     )
   "The list of Lisp packages required by the monsetter layer.
 
@@ -65,6 +66,10 @@ Each entry is either:
     :init
     (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
     )
+  )
+
+(defun monsetter/init-thrift ()
+  (use-package thrift)
   )
 
 ;; (add-to-load-path "./")
