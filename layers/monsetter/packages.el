@@ -30,10 +30,11 @@
 ;;; Code:
 
 (defconst monsetter-packages
-  '(
-    youdao-dictionary
+  '(youdao-dictionary
     thrift
-    )
+    restclient
+    dash-at-point
+    indium)
   "The list of Lisp packages required by the monsetter layer.
 
 Each entry is either:
@@ -64,13 +65,19 @@ Each entry is either:
 (defun monsetter/init-youdao-dictionary()
   (use-package youdao-dictionary
     :init
-    (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
-    )
-  )
+    (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)))
 
 (defun monsetter/init-thrift ()
-  (use-package thrift)
-  )
+  (use-package thrift))
+
+(defun monsetter/init-restclient ()
+  (use-package restclient))
+
+(defun monsetter/init-dash-at-point ()
+  (use-package dash-at-point))
+
+(defun monsetter/init-indium ()
+  (use-package indium))
 
 ;; (add-to-load-path "./")
 ;; (load "thrift-mode.el")
