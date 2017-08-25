@@ -58,7 +58,7 @@ values."
      emacs-lisp
      git
      markdown
-     org
+     ;; org
      (shell :variables
             shell-default-term-shell "/bin/zsh"
             shell-default-height 30
@@ -376,8 +376,7 @@ you should place your code "
 
   ;; hooks
   (add-hook 'flycheck-mode-hook #'helpers/use-eslint-from-node-modules)
-  (add-hook 'web-mode-hook 'helpers/web-mode-indent-setup)
-  )
+  (add-hook 'web-mode-hook 'helpers/web-mode-indent-setup))
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
