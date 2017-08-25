@@ -345,6 +345,25 @@ you should place your code "
   (global-set-key (kbd "s->") 'mc/mark-next-like-this-symbol)
   (global-set-key (kbd "s-<") 'mc/mark-previous-like-this-symbol)
 
+  ;; disable company when not interact with
+  ;; (dolist (key '("<return>" "RET"))
+  ;;   ;; Here we are using an advanced feature of define-key that lets
+  ;;   ;; us pass an "extended menu item" instead of an interactive
+  ;;   ;; function. Doing this allows RET to regain its usual
+  ;;   ;; functionality when the user has not explicitly interacted with
+  ;;   ;; Company.
+  ;;   (define-key company-active-map (kbd key)
+  ;;     `(menu-item nil company-complete
+  ;;                 :filter ,(lambda (cmd)
+  ;;                            (when (company-explicit-action-p)
+  ;;                              cmd)))))
+  ;; (define-key company-active-map (kbd "TAB") #'company-complete-selection)
+  ;; (define-key company-active-map (kbd "SPC") nil)
+
+  ;; ;; Company appears to override the above keymap based on company-auto-complete-chars.
+  ;; ;; Turning it off ensures we have full control.
+  ;; (setq company-auto-complete-chars 
+
   (setq
    ;; spacemacs
    powerline-default-separator 'arrow
