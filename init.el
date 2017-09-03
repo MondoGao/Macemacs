@@ -2,7 +2,7 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
-(add-to-list 'load-path "~/.spacemacs.d/defuns/")
+(add-to-list 'load-path (expand-file-name "defuns" dotspacemacs-directory))
 (load "helpers.el")
 
 (defun dotspacemacs/layers ()
@@ -386,7 +386,7 @@ you should place your code "
   (global-git-commit-mode t)
   (global-company-mode)
 
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . react-mode))
   (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
