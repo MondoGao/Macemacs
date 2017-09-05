@@ -17,3 +17,17 @@
   (setq web-mode-code-indent-offset 2)   ; web-mode, js code in html file
   )
 
+(defun helpers/eslint-fix ()
+  "Format the current file with ESLint."
+  (interactive)
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+                      (expand-file-name "node_modules/eslint/bin/eslint.js"
+                                        root))))
+    (when (and eslint (file-executable-p eslint))
+      (progn (call-process eslint nil "*ESLint Errors*" nil "--fix" buffer-file-name)
+             (revert-buffer t t t)))))
+
+(provide 'helpers/eslint-fix)

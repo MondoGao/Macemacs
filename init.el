@@ -4,6 +4,7 @@
 
 (add-to-list 'load-path (expand-file-name "defuns" dotspacemacs-directory))
 (load "helpers.el")
+(load "add-node-modules-path.el")
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
@@ -381,9 +382,11 @@ you should place your code "
    eclimd-default-workspace "~/eclipse-workspace"
    eclimd-wait-for-process t
 
-   ;; indent
+   ;; js2-mode
    js2-basic-offset 2
    js-indent-level 2
+   js2-strict-trailing-comma-warning nil
+
    css-indent-offset 2
    web-mode-markup-indent-offset 2
    web-mode-css-indent-offset 2
@@ -404,6 +407,13 @@ you should place your code "
 
   ;; hooks
   (add-hook 'flycheck-mode-hook #'helpers/use-eslint-from-node-modules)
+
+  (add-hook 'js2-mode-hook #'js2-refactor-mode)
+  ;; (add-hook 'js-mode-hook (lambda () (add-hook 'after-save-hook 'helpers/eslint-fix nil t)))
+  ;; (add-hook 'js2-mode-hook (lambda () (add-hook 'after-save-hook 'helpers/eslint-fix nil t)))
+  (add-hook 'js-mode-hook #'add-node-modules-path)
+  (add-hook 'js2-mode-hook #'add-node-modules-path)
+
   (add-hook 'web-mode-hook 'helpers/web-mode-indent-setup))
 
 (defun dotspacemacs/emacs-custom-settings ()
