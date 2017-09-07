@@ -348,6 +348,10 @@ you should place your code "
   (global-set-key (kbd "s->") 'mc/mark-next-like-this-symbol)
   (global-set-key (kbd "s-<") 'mc/mark-previous-like-this-symbol)
 
+  (spacemacs/set-leader-keys-for-major-mode 'js2-mode  "-" 'helpers/eslint-fix)
+  (spacemacs/set-leader-keys-for-major-mode 'js-mode  "-" 'helpers/eslint-fix)
+  (spacemacs/set-leader-keys-for-major-mode 'react-mode  "-" 'helpers/eslint-fix)
+
   ;; disable company when not interact with
   ;; (dolist (key '("<return>" "RET"))
   ;;   ;; Here we are using an advanced feature of define-key that lets
