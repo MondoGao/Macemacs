@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: require
+# key: requ
+# --
+const ${1:$(string-inflection-camelcase-function (file-name-nondirectory yas/text))}$2 = require('${1:module}');$0

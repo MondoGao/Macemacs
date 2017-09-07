@@ -2,5 +2,4 @@
 # name:import
 # key:imp
 # --
-import ${1:$(string-inflection-lower-camelcase-function (file-name-nondirectory yas/text))} from '${1:module}';$0
-
+import ${1:$(string-inflection-lower-camelcase-function (file-name-nondirectory yas/text))}$2 from '${1:module}';$0
